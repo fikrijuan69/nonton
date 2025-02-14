@@ -1,0 +1,179 @@
+/* @use "../../scss/" as *; */
+.casts__item {
+  box-shadow: 1px 0px 2px 1px;
+}
+.biodat td {
+  padding: 20px;
+}
+.genres__item {
+  margin: 10px;
+  border: 1px solid;
+  padding: 5px;
+}
+.jarak {
+  margin-bottom: 20px;
+}
+.casts__item__name {
+  padding: 0px 5px;
+}
+
+.release-date{
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-top: 0;
+  padding-bottom: 20px;
+}
+.rating{
+  font-size: 1.5rem;
+  font-weight: bold;
+padding-top: 0;
+padding-bottom: 20px;
+}
+
+.detailbio {
+  display: grid;
+  grid-template-areas:
+    "menu content"
+    "footer footer";
+  grid-template-columns: 1fr 3fr;
+  gap: 7em;
+  background-color: #2196f3;
+  padding: 14em;
+}
+.detailbio .namadet {
+  grid-area: content;
+}
+.detailbio .biodatadet {
+  grid-area: footer;
+}
+.casts__item__img {
+  padding-top: 160px;
+  background-size: cover;
+  margin-bottom: 0.5rem;
+}
+.castsimg {
+  grid-area: menu;
+  background-size: 100% 100%;
+  padding-top: 17em;
+}
+.banner {
+  min-height: 75vh;
+  position: relative;
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    @include overlay();
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-image: linear-gradient(to top, $body-bg, rgba($black, 0));
+  }
+}
+
+.movie-content {
+  @include flex(flex-start, flex-start);
+
+  max-width: 1260px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #00000082;
+  margin-top: -220px;
+  position: relative;
+  padding: 2em 2rem;
+
+  &__poster {
+    flex: 1;
+
+    @include mobile {
+      display: none;
+    }
+
+    &__img {
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: $border-radius;
+      padding-top: 165%;
+    }
+  }
+
+  &__info {
+    width: 70%;
+    padding-left: 2rem;
+    position: relative;
+
+    @include mobile {
+      width: 100%;
+      padding-left: 0;
+    }
+
+    & > * {
+      margin-bottom: 2rem;
+    }
+
+    .title {
+      font-size: 4rem;
+      line-height: 1;
+    }
+
+    .genres {
+      & > * ~ * {
+        margin-left: 0.5rem;
+      }
+
+      &__item {
+        padding: 0.5rem 1.5rem;
+        border: 2px solid $white;
+        border-radius: $border-radius;
+        font-size: 0.8rem;
+        font-weight: 600;
+        background-color: $body-bg;
+      }
+    }
+
+    .overview {
+      letter-spacing: 0.5px;
+    }
+  }
+}
+
+.casts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 10px;
+
+  &__item {
+    &__img {
+      padding-top: 160px;
+      background-size: cover;
+      margin-bottom: 0.5rem;
+    }
+
+    &__name {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.video {
+  margin-bottom: 3rem;
+
+  &__title {
+    margin-bottom: 1.5rem;
+  }
+}
